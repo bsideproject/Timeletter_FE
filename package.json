@@ -13,7 +13,15 @@
     "eject": "react-scripts eject",
     "lint": "eslint --ext .ts,.tsx src/",
     "lint:fix": "eslint --fix --ext .ts,.tsx src/",
-    "format": "prettier --write src/ --config ./.prettierrc"
+    "format": "prettier --write src/ --config ./.prettierrc",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --cache --fix"
+    ]
   },
   "dependencies": {
     "@testing-library/react": "^13.3.0",
@@ -56,6 +64,8 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1"
   },
   "packageManager": "yarn@3.2.1",
