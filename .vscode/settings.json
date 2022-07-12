@@ -9,10 +9,10 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
     "source.organizeImports": true,
     "source.sortMembers": true
   },
+  "eslint.validate": ["typescript", "typescriptreact"],
   "eslint.nodePath": ".yarn/sdks",
   "prettier.prettierPath": ".yarn/sdks/prettier/index.js"
 }
