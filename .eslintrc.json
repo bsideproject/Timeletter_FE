@@ -44,8 +44,10 @@
       { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
     ],
 
-    "curly": "error",
+    // https://eslint.org/docs/latest/rules/object-curly-newline
+    "object-curly-newline": ["error", { "ObjectExpression": "always", "ObjectPattern": "never" }],
 
+    // https://github.com/lydell/eslint-plugin-simple-import-sort
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error"
   },
