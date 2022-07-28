@@ -1,3 +1,5 @@
+import Button from '~components/Button/Button';
+
 import logo from './logo.svg';
 
 import './App.css';
@@ -7,6 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Button label="Shared Button" backgroundColor="white" />
         <p>
           Edit
           <code>src/App.tsx</code>

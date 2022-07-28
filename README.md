@@ -22,7 +22,16 @@ yarn
 특정 `workspace` 에 정의된 명령어 실행: `yarn <workspace-name> <comman-name>`
 
 Run Workspaces in development mode:
-- app: Time Letter main app
+- app: 타임레터 앱 workspace
 ```
 yarn app start
+```
+- components: 타임레터 공통 컴포넌트 workspace
+```
+yarn app components
+```
+
+4. Run app and components:
+```
+yarn start:all
 ```

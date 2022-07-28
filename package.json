@@ -3,15 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bsideproject/Timeletter_FE.git"
-  },
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "app": "yarn workspace app",
+    "app": "yarn workspace @timeletter_fe/app",
+    "components": "yarn workspace @timeletter_fe/components",
+    "start:all": "concurrently --kill-others \"yarn app start\" \"yarn components storybook\"",
     "test:all": "yarn workspaces foreach --parallel run test",
     "lint:all": "yarn workspaces foreach --parallel run lint",
     "format:all": "yarn workspaces foreach --parallel run format",
@@ -27,9 +25,10 @@
     ]
   },
   "prepush-if-changed": {
-    "packages/**/src/**/*.{ts,tsx}": "yarn test:all --watchAll=false --maxWorkers=50%"
+    "packages/**/src": "yarn test:all --watchAll=false --maxWorkers=50%"
   },
   "dependencies": {
+    "concurrently": "^7.3.0",
     "typescript": "^4.7.4"
   },
   "devDependencies": {
@@ -45,6 +44,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-storybook": "^0.6.1",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
